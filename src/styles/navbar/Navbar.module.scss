@@ -33,6 +33,11 @@
       color: $navLinkColor !important;
       font-family: $navLinkFont !important;
       font-size: 20px;
+      transition: 600ms;
+    }
+    
+    .navLink:hover {
+      color: white !important;
     }
   }
 
