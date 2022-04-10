@@ -1,5 +1,11 @@
 @import '../variables/Variables.scss';
+@import "~normalize.css";
+@import "~@blueprintjs/core/lib/css/blueprint.css";
+@import "~@blueprintjs/icons/lib/css/blueprint-icons.css";
 
 body {
-    background-color: $appBackgroundColor !important;
+    background-color: $appBackgroundColor;
+    font-family: $navLinkFont;
+    margin: 0;
+    padding: 0%;
 }
