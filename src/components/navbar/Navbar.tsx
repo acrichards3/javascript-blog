@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { Button } from '@blueprintjs/core'
-import '../../styles/navbar/Navbar.css';
+import { Icon } from '@blueprintjs/core'
+import '../../styles/navbar/Navbar.scss';
 
 
 export default function Navbar() {
@@ -11,12 +11,18 @@ export default function Navbar() {
         <h1 className="logo">Logo Here</h1>
       </div>
       <div className="col-lg-4 navCenter">
-        <Link to="/" className='navLink'> Home </Link>
-        <Link to="/about" className='navLink'> About </Link>
-        <Link to="/courses"className='navLink'> Courses </Link>
+        <Link to="/" className="navLink">
+          <Icon icon="home" color="#99A5B9" /> Home{' '}
+        </Link>
+        <Link to="/blog" className="navLink">
+          <Icon icon="manually-entered-data" color="#99A5B9" /> Blog{' '}
+        </Link>
+        <Link to="/courses" className="navLink">
+          <Icon icon="learning" color="#99A5B9" /> Courses{' '}
+        </Link>
       </div>
       <div className="col-lg-4 navEnd">
-        <Button intent='primary'>Login</Button>
+        <button className="loginBtn">Sign In</button>
       </div>
     </div>
   );

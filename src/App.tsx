@@ -3,7 +3,7 @@ import Home from './pages/Home';
 import CreatePost from './pages/CreatePost';
 import About from './pages/About';
 import Navbar from './components/navbar/Navbar';
-import './styles/app/App.css';
+import './styles/app/App.scss';
 
 function App() {
 

@@ -42,4 +42,25 @@
     align-items: center;
     flex-grow: 3;
   }
+
+  .loginBtn {
+    color: $navLinkColor;
+    background-image: $navbarColorGradient;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-family: $navLinkFont;
+    font-size: 20px;
+    letter-spacing: 2px;
+    border: solid;
+    border-radius: 4px;
+    border-width: 1px;
+    transition: 600ms;
+  }
+
+  .loginBtn:hover {
+    color: white;
+    background-image: $orangeToPinkGradient;
+  }
 }
