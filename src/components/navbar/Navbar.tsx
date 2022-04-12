@@ -1,16 +1,26 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '@blueprintjs/core';
+import MobileNav from './MobileNav';
 import styles from '../../styles/navbar/Navbar.module.scss';
 
 export default function Navbar() {
-  const [navOpen, setNavOpen] = useState(false); // test
+  const [isOpen, setIsOpen] = useState(false);
 
+  const toggleOpen = () => {
+    setIsOpen((prev) => !prev);
+  };
 
   return (
     <div className={styles.navbar}>
       <div className={styles.navStart}>
-        <h1 className={styles.logo}>Logo Here</h1>
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <h1 className={styles.logo}>Logo Here</h1>
+        </Link>
+          <Icon onClick={toggleOpen} icon="menu" color="#99a5b9" className={styles.mobileBtn} />
+          <div className={isOpen ? styles.mobileOpen : styles.mobileClosed}>
+            <MobileNav />
+          </div>
       </div>
       <div className={styles.navCenter}>
         <div className={styles.homeIcon}>

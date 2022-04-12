@@ -12,7 +12,7 @@
     display: flex;
     justify-content: flex-start;
     align-items: center;
-    flex-grow: 3;
+    flex-grow: 5;
 
     .logo {
       justify-content: flex-start;
@@ -46,11 +46,47 @@
     }
   }
 
+  @media only screen and (max-width: 768px) {
+    .homeIcon,
+    .blogIcon,
+    .coursesIcon {
+      display: none;
+    }
+  }
+
+  .mobileBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: $navbarColor;
+    border: solid;
+    border-color: $navLinkColor;
+    border-width: 1px;
+    padding: 5px;
+    margin-left: 20px;
+    cursor: pointer;
+  }
+
+  @media only screen and (min-width: 768px) {
+    .mobileBtn {
+      display: none;
+    }
+  }
+
+  .mobileOpen {
+    display: flex;
+    background-color: $mobileNavColor;
+  }
+
+  .mobileClosed {
+    display: none;
+  }
+
   .navEnd {
     display: flex;
     justify-content: right;
     align-items: center;
-    flex-grow: 3;
+    flex-grow: 5;
   }
 
   .loginBtn {
