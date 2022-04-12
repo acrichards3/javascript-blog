@@ -7,7 +7,7 @@
   background-color: $navbarColor;
   display: flex;
   position: sticky;
-  
+
   .navStart {
     display: flex;
     justify-content: flex-start;
@@ -28,16 +28,21 @@
     align-items: center;
     flex-grow: 1;
 
-    .navLink {
+    .homeIcon,
+    .blogIcon,
+    .coursesIcon {
       text-decoration: none;
+      fill: $navLinkColor !important;
       color: $navLinkColor !important;
       font-family: $navLinkFont !important;
       font-size: 20px;
       transition: 600ms;
-    }
-    
-    .navLink:hover {
-      color: white !important;
+
+      :hover {
+        color: white !important;
+        fill: white !important;
+        transition: 600ms;
+      }
     }
   }
 
@@ -62,10 +67,36 @@
     border-radius: 4px;
     border-width: 1px;
     transition: 600ms;
+    position: absolute;
   }
 
   .loginBtn:hover {
     color: white;
+  }
+
+  .loginBtnColor {
+    color: $navLinkColor;
     background-image: $orangeToPinkGradient;
+    opacity: 0;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 3%;
+    padding-right: 3%;
+    font-family: $navLinkFont;
+    font-size: 20px;
+    letter-spacing: 2px;
+    border: solid;
+    border-radius: 4px;
+    border-width: 1px;
+    transition: 600ms;
+    z-index: 2;
+    position: absolute;
+    cursor: pointer;
+  }
+
+  .loginBtnColor:hover {
+    color: white;
+    opacity: 1;
+    z-index: 900;
   }
 }
