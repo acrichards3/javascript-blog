@@ -46,6 +46,12 @@
     }
   }
 
+  .homeIconMobile,
+  .blogIconMobile,
+  .coursesIconMobile {
+    padding: 20px;
+  }
+
   @media only screen and (max-width: 768px) {
     .homeIcon,
     .blogIcon,
@@ -54,32 +60,12 @@
     }
   }
 
-  .mobileBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: $navbarColor;
-    border: solid;
-    border-color: $navLinkColor;
-    border-width: 1px;
-    padding: 5px;
-    margin-left: 20px;
-    cursor: pointer;
-  }
-
   @media only screen and (min-width: 768px) {
-    .mobileBtn {
+    .homeIconMobile,
+    .blogIconMobile,
+    .coursesIconMobile {
       display: none;
     }
-  }
-
-  .mobileOpen {
-    display: flex;
-    background-color: $mobileNavColor;
-  }
-
-  .mobileClosed {
-    display: none;
   }
 
   .navEnd {
