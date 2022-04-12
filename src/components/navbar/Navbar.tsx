@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '@blueprintjs/core';
 import styles from '../../styles/navbar/Navbar.module.scss';
 
 export default function Navbar() {
+  const [navOpen, setNavOpen] = useState(false); // test
+
+
   return (
     <div className={styles.navbar}>
       <div className={styles.navStart}>
