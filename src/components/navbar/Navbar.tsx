@@ -8,7 +8,7 @@ export default function Navbar() {
     <div className={styles.navbar}>
       <div className={styles.navStart}>
         <Link to="/" style={{ textDecoration: 'none' }}>
-          <h1 className={styles.logo}>Logo Here</h1>
+          <h1 className={styles.logo}>Logo</h1>
         </Link>
       </div>
       <div className={styles.navCenter}>
