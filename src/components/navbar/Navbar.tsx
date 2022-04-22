@@ -2,14 +2,11 @@ import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon, Dialog } from '@blueprintjs/core';
 import styles from '../../styles/navbar/Navbar.module.scss';
-import {
-  ACTIONS,
-  GlobalContext,
-  initialState,
-} from '../../context/GlobalContext';
+import { ACTIONS, GlobalContext } from '../../context/GlobalContext';
 
 export default function Navbar() {
   const context = useContext(GlobalContext);
+  console.log(context.state);
 
   return (
     <div className={styles.navbar}>
@@ -48,17 +45,13 @@ export default function Navbar() {
       </div>
       <div className={styles.navEnd}>
         <button className={styles.loginBtn}>Sign In</button>
-        <button
-          className={styles.loginBtnColor}
-          onClick={() => context.dispatch({ type: ACTIONS.IS_OPEN_TRUE })}
-        >
+        <button className={styles.loginBtnColor} onClick={() => context.dispatch({ type: ACTIONS.IS_OPEN_TRUE })}>
           Sign In
         </button>{' '}
         <div className="bp4-dialog-container">
           <Dialog
             title="Login"
-            isOpen={initialState.isOpen}
-            canOutsideClickClose={true}
+            isOpen={context.state.isOpen}
             onClose={() => context.dispatch({ type: ACTIONS.IS_OPEN_FALSE })}
             usePortal={true}
           >
