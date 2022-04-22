@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Icon, Dialog } from '@blueprintjs/core';
 import styles from '../../styles/navbar/Navbar.module.scss';
 import { ACTIONS, GlobalContext } from '../../context/GlobalContext';
+import { Image } from 'react-bootstrap';
 
 export default function Navbar() {
   const context = useContext(GlobalContext);
@@ -63,9 +64,17 @@ export default function Navbar() {
             <div className={styles.dialogBtns}>
               <button type="button" className={styles.dialogGoogle}>
                 Sign in With Google
+                <Image
+                  src="https://cdn.iconscout.com/icon/free/png-64/google-search-engine-find-anything-46241.png"
+                  className={styles.loginImg}
+                />
               </button>
               <button type="submit" className={`${styles.dialogGithub}`}>
                 Sign in With Github
+                <Image
+                  src="https://cdn.iconscout.com/icon/free/png-64/github-163-761603.png"
+                  className={styles.loginImg}
+                />
               </button>
             </div>
           </Dialog>
