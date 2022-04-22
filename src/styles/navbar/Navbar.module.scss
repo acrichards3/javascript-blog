@@ -122,6 +122,52 @@
   .loginBtnColor:hover {
     color: white;
     opacity: 1;
-    z-index: 900;
+    z-index: 10;
+  }
+}
+
+.dialogBtns {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  padding-top: 10px;
+
+  .dialogGoogle {
+    font-size: 22px !important;
+    border: solid;
+    background: linear-gradient(
+      117deg,
+      rgba(37, 152, 68, 1) 51%,
+      rgba(72, 150, 237, 1) 93%
+    );
+    border-radius: 4px;
+    color: $slightlyGray;
+    border-width: 1px;
+    padding: 5px;
+    cursor: pointer;
+    transition: 600ms;
+  }
+  .dialogGoogle:hover {
+    color: white;
+  }
+
+  .dialogGithub {
+    font-size: 22px !important;
+    background: linear-gradient(
+      117deg,
+      rgba(33, 30, 30, 1) 19%,
+      rgba(86, 39, 130, 1) 53%,
+      rgba(188, 72, 237, 1) 81%
+    );
+    border: solid;
+    color: $slightlyGray;
+    border-radius: 4px;
+    border-width: 1px;
+    padding: 5px;
+    cursor: pointer;
+    transition: 600ms;
+  }
+  .dialogGithub:hover {
+    color: white;
   }
 }

@@ -45,17 +45,29 @@ export default function Navbar() {
       </div>
       <div className={styles.navEnd}>
         <button className={styles.loginBtn}>Sign In</button>
-        <button className={styles.loginBtnColor} onClick={() => context.dispatch({ type: ACTIONS.IS_OPEN_TRUE })}>
+        <button
+          className={styles.loginBtnColor}
+          onClick={() => context.dispatch({ type: ACTIONS.IS_OPEN_TRUE })}
+        >
           Sign In
         </button>{' '}
-        <div className="bp4-dialog-container">
+        <div>
           <Dialog
-            title="Login"
+            title="LOGIN"
+            style={{ letterSpacing: 2 }}
+            className={`bp4-dark`}
             isOpen={context.state.isOpen}
             onClose={() => context.dispatch({ type: ACTIONS.IS_OPEN_FALSE })}
             usePortal={true}
           >
-            Testing
+            <div className={styles.dialogBtns}>
+              <button type="button" className={styles.dialogGoogle}>
+                Sign in With Google
+              </button>
+              <button type="submit" className={`${styles.dialogGithub}`}>
+                Sign in With Github
+              </button>
+            </div>
           </Dialog>
         </div>
       </div>
