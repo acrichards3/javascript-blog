@@ -1,26 +1,32 @@
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
-import { Icon, Dialog } from '@blueprintjs/core';
-import styles from '../../styles/navbar/Navbar.module.scss';
+import { Icon } from '@blueprintjs/core';
 import { ACTIONS, GlobalContext } from '../../context/GlobalContext';
-import { Image } from 'react-bootstrap';
-import { auth, googleProvider, githubProvider } from '../../firebase-config';
-import { signInWithPopup } from 'firebase/auth';
+import Login from './Login';
+import Account from './Account';
+import styles from '../../styles/navbar/Navbar.module.scss';
 
 export default function Navbar() {
   const context = useContext(GlobalContext);
-  
-  const signInWithGoogle = () => {
-    signInWithPopup(auth, googleProvider).then((result) => {
-      context.dispatch({ type: ACTIONS.SET_AUTH_TRUE })
-    });
-  }
+  console.log(context.state.isOpen, context.state.loggedIn);
 
-  const signInWithGithub = () => {
-    signInWithPopup(auth, githubProvider).then((result) => {
-      context.dispatch({ type: ACTIONS.SET_AUTH_TRUE })
-    })
-  }
+  const displayDialog = () => {
+    if (!context.state.loggedIn) {
+      return <Login />;
+    }
+    if (context.state.loggedIn) {
+      return <Account />;
+    }
+  };
+
+  const loginBtn = () => {
+    if (context.state.loggedIn) {
+      return 'Account';
+    }
+    if (context.state.loggedIn === false) {
+      return 'Sign In';
+    }
+  };
 
   return (
     <div className={styles.navbar}>
@@ -58,40 +64,14 @@ export default function Navbar() {
         </div>
       </div>
       <div className={styles.navEnd}>
-        <button className={styles.loginBtn}>Sign In</button>
+        <button className={styles.loginBtn}>{loginBtn()}</button>
         <button
           className={styles.loginBtnColor}
           onClick={() => context.dispatch({ type: ACTIONS.IS_OPEN_TRUE })}
         >
-          Sign In
+          {loginBtn()}
         </button>{' '}
-        <div>
-          <Dialog
-            title="LOGIN"
-            style={{ letterSpacing: 2 }}
-            className={`bp4-dark`}
-            isOpen={context.state.isOpen}
-            onClose={() => context.dispatch({ type: ACTIONS.IS_OPEN_FALSE })}
-            usePortal={true}
-          >
-            <div className={styles.dialogBtns}>
-              <button type="button" className={styles.dialogGoogle} onClick={signInWithGoogle}>
-                Sign in With Google
-                <Image
-                  src="https://cdn.iconscout.com/icon/free/png-64/google-search-engine-find-anything-46241.png"
-                  className={styles.loginImg}
-                />
-              </button>
-              <button type="submit" className={`${styles.dialogGithub}`} onClick={signInWithGithub}>
-                Sign in With Github
-                <Image
-                  src="https://cdn.iconscout.com/icon/free/png-64/github-163-761603.png"
-                  className={styles.loginImg}
-                />
-              </button>
-            </div> 
-          </Dialog>
-        </div>
+        {displayDialog()}
       </div>
     </div>
   );
