@@ -4,10 +4,24 @@ import { Icon, Dialog } from '@blueprintjs/core';
 import styles from '../../styles/navbar/Navbar.module.scss';
 import { ACTIONS, GlobalContext } from '../../context/GlobalContext';
 import { Image } from 'react-bootstrap';
+import { auth, googleProvider, githubProvider } from '../../firebase-config';
+import { signInWithPopup } from 'firebase/auth';
 
 export default function Navbar() {
   const context = useContext(GlobalContext);
-  console.log(context.state);
+  console.log(context.state.isAuth, 'test');
+  
+  const signInWithGoogle = () => {
+    signInWithPopup(auth, googleProvider).then((result) => {
+      context.dispatch({ type: ACTIONS.SET_AUTH_TRUE });
+    });
+  }
+
+  const signInWithGithub = () => {
+    signInWithPopup(auth, githubProvider).then((result) => {
+      context.dispatch({ type: ACTIONS.SET_AUTH_TRUE })
+    })
+  }
 
   return (
     <div className={styles.navbar}>
@@ -62,21 +76,21 @@ export default function Navbar() {
             usePortal={true}
           >
             <div className={styles.dialogBtns}>
-              <button type="button" className={styles.dialogGoogle}>
+              <button type="button" className={styles.dialogGoogle} onClick={signInWithGoogle}>
                 Sign in With Google
                 <Image
                   src="https://cdn.iconscout.com/icon/free/png-64/google-search-engine-find-anything-46241.png"
                   className={styles.loginImg}
                 />
               </button>
-              <button type="submit" className={`${styles.dialogGithub}`}>
+              <button type="submit" className={`${styles.dialogGithub}`} onClick={signInWithGithub}>
                 Sign in With Github
                 <Image
                   src="https://cdn.iconscout.com/icon/free/png-64/github-163-761603.png"
                   className={styles.loginImg}
                 />
               </button>
-            </div>
+            </div> 
           </Dialog>
         </div>
       </div>
