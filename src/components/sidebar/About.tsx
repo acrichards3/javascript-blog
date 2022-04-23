@@ -3,17 +3,18 @@ import styles from '../../styles/sidebar/Sidebar.module.scss';
 
 export default function About() {
   return (
-    <div className={styles.sidebar}>
-      <div className={styles.container}>
+    <div className={styles.container}>
+        <h1 className={styles.header}>ABOUT ME</h1>
         <img
           className={styles.me}
           alt="me"
           src={require('../../images/me.jpg')}
         />
-        <h1 className={styles.header}>ABOUT ME</h1>
         <p className={styles.text}>
-          Hi, I'm Alex! I am a full stack web developer whos passion is to teach
-          the world how to code.
+          Hi, I'm Alex! 3 years ago, I console logged my first "Hello World" and
+          shortly after, I was hooked on coding. Today I'm a full stack web
+          developer whos passion is to teach others how to code through writing
+          and videos.
         </p>
         <h1 className={styles.header}>LEGAL</h1>
         <p className={styles.text}>
@@ -24,7 +25,6 @@ export default function About() {
           site also participates in other affiliate programs and is compensated
           for referring traffic and business to these companies.
         </p>
-      </div>
     </div>
   );
 }

@@ -1,29 +1,17 @@
 @import '../variables/Variables.scss';
 
-.sidebar {
+.container {
   display: flex;
   flex-direction: column;
-  align-items: flex-end;
-  border: solid;
-  border-width: 1px;
-  border-color: red;
-}
-
-.container {
-  width: 25%;
-  border: solid;
-  border-width: 1px;
+  margin-right: 8%;
   padding-top: 100px;
-  border-color: green;
-
-  .header {
-    margin-right: 12.5%;
-  }
+  align-items: center;
+  justify-content: center;
+  float: right;
 
   .text {
-    width: 400px;
+    width: 350px;
     font-size: 14px;
-    margin-right: 5%;
     justify-content: center;
   }
 
@@ -34,5 +22,17 @@
     border: solid;
     border-color: $navLinkColor;
     border-width: 2px;
+    margin-bottom: 20px;
   }
+}
+
+@media only screen and (max-width: 992px) {
+  .container {
+    width: 100%;
+    margin-right: 0%;
+  }
+}
+
+.card {
+  background-color: red;
 }
