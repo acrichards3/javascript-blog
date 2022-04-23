@@ -9,11 +9,10 @@ import { signInWithPopup } from 'firebase/auth';
 
 export default function Navbar() {
   const context = useContext(GlobalContext);
-  console.log(context.state.isAuth, 'test');
   
   const signInWithGoogle = () => {
     signInWithPopup(auth, googleProvider).then((result) => {
-      context.dispatch({ type: ACTIONS.SET_AUTH_TRUE });
+      context.dispatch({ type: ACTIONS.SET_AUTH_TRUE })
     });
   }
 
