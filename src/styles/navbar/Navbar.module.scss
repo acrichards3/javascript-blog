@@ -172,7 +172,6 @@
     padding: 5px;
     cursor: pointer;
     transition: 600ms;
-
   }
   .dialogGithub:hover {
     border-color: grey;
@@ -185,4 +184,26 @@
   padding-left: 5px;
   width: 13%;
   filter: invert(100%);
+}
+
+.logoutBtn {
+  font-size: 20px !important;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: $signOut;
+  border: solid;
+  color: white;
+  border-radius: 4px;
+  border-width: 1px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-left: 10px;
+  padding-right: 10px;
+  cursor: pointer;
+  transition: 600ms;
+}
+
+.logoutBtn:hover {
+  border-color: grey;
 }

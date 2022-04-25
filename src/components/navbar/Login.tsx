@@ -7,21 +7,23 @@ import { signInWithPopup } from 'firebase/auth';
 import styles from '../../styles/navbar/Navbar.module.scss';
 
 export default function Login() {
-    const context = useContext(GlobalContext);
+  const context = useContext(GlobalContext);
 
-    const signInWithGoogle = () => {
-      signInWithPopup(auth, googleProvider).then((result) => {
-        context.dispatch({ type: ACTIONS.SET_AUTH_TRUE });
-        context.dispatch({ type: ACTIONS.SET_LOGGED_IN_TRUE });
-      });
-    };
+  const signInWithGoogle = () => {
+    signInWithPopup(auth, googleProvider).then((result) => {
+        context.dispatch({ type: ACTIONS.IS_OPEN_FALSE });
+      context.dispatch({ type: ACTIONS.SET_AUTH_TRUE });
+      context.dispatch({ type: ACTIONS.SET_LOGGED_IN_TRUE });
+    });
+  };
 
-    const signInWithGithub = () => {
-      signInWithPopup(auth, githubProvider).then((result) => {
-        context.dispatch({ type: ACTIONS.SET_AUTH_TRUE });
-        context.dispatch({ type: ACTIONS.SET_LOGGED_IN_TRUE });
-      });
-    };
+  const signInWithGithub = () => {
+    signInWithPopup(auth, githubProvider).then((result) => {
+        context.dispatch({ type: ACTIONS.IS_OPEN_FALSE });
+      context.dispatch({ type: ACTIONS.SET_AUTH_TRUE });
+      context.dispatch({ type: ACTIONS.SET_LOGGED_IN_TRUE });
+    });
+  };
 
   return (
     <div>
@@ -35,7 +37,7 @@ export default function Login() {
       >
         <div className={styles.dialogBtns}>
           <button
-            type="button"
+            type="submit"
             className={styles.dialogGoogle}
             onClick={signInWithGoogle}
           >
