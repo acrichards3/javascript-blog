@@ -1,18 +1,24 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Icon } from '@blueprintjs/core';
-import { GlobalContext } from '../../context/GlobalContext';
+import { GlobalContext, ADMINS, ACTIONS } from '../../context/GlobalContext';
 import Login from './Login';
+import { auth } from '../../firebase-config';
 import styles from '../../styles/navbar/Navbar.module.scss';
 
 export default function Navbar() {
   const context = useContext(GlobalContext);
-  console.log(context.state.isOpen, context.state.loggedIn);
+  const user = auth.currentUser;
+  const UID = user?.uid ?? '';
+
+  console.log(context.state.loggedIn, 'loggedin');
+  console.log(context.state.isAdmin, 'admin');
+
 
   const loginBtn = () => {
     if (context.state.loggedIn) {
       return (
-        <Link to="/" className={styles.accountBtn} style={{textDecoration: 'none'}}>
+        <Link to="/account" className={styles.accountBtn}>
           Account
         </Link>
       );
@@ -21,6 +27,20 @@ export default function Navbar() {
       return <Login />;
     }
   };
+
+  const checkAdmin = () => {
+    for (let i = 0; i < ADMINS.length; i++) {
+      if (ADMINS[i].uid === UID) {
+        context.dispatch({ type: ACTIONS.IS_ADMIN_TRUE });
+      }
+    }
+  };
+
+  useEffect(() => {
+    checkAdmin();
+    // eslint-disable-next-line
+  }, [user]);
+
 
   return (
     <div className={styles.navbar}>

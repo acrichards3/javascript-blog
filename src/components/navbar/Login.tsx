@@ -10,8 +10,8 @@ export default function Login() {
 
   const signInWithGoogle = () => {
     signInWithPopup(auth, googleProvider).then((result) => {
-      context.dispatch({ type: ACTIONS.SET_AUTH_TRUE });
       context.dispatch({ type: ACTIONS.SET_LOGGED_IN_TRUE });
+      localStorage.setItem("loggedIn", 'true');
     });
   };
 

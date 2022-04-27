@@ -11,8 +11,6 @@ export const ADMINS = [
 ];
 
 export const ACTIONS = {
-  SET_AUTH_TRUE: 'SET_AUTH_TRUE',
-  SET_AUTH_FALSE: 'SET_AUTH_FALSE',
   SET_LOGGED_IN_TRUE: 'SET_LOGGED_IN_TRUE',
   SET_LOGGED_IN_FALSE: 'SET_LOGGED_IN_FALSE',
   IS_ADMIN_TRUE: 'IS_ADMIN_TRUE',
@@ -20,20 +18,14 @@ export const ACTIONS = {
 };
 
 export const initialState: any = {
-  isAuth: false,
   loggedIn: false,
   isAdmin: false,
 };
 
 export const reducer = (state: any, action: any) => {
   switch (action.type) {
-    // AUTHENTICATION
-    case ACTIONS.SET_AUTH_TRUE:
-      return { ...state, isAuth: true };
-    case ACTIONS.SET_AUTH_FALSE:
-      return { ...state, isAuth: false };
 
-    // IS USER LOGGED IN
+    // AUTHENTICATION
     case ACTIONS.SET_LOGGED_IN_TRUE:
       return { ...state, loggedIn: true };
     case ACTIONS.SET_LOGGED_IN_FALSE:
