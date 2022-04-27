@@ -77,53 +77,6 @@
     align-items: center;
     flex-grow: 5;
   }
-
-  .loginBtn {
-    color: $navLinkColor;
-    background-image: $navbarColorGradient;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 3%;
-    padding-right: 3%;
-    font-family: $navLinkFont;
-    font-size: 20px;
-    letter-spacing: 2px;
-    border: solid;
-    border-radius: 4px;
-    border-width: 1px;
-    transition: 600ms;
-    position: absolute;
-  }
-
-  .loginBtn:hover {
-    color: white;
-  }
-
-  .loginBtnColor {
-    color: $navLinkColor;
-    background-image: $orangeToPinkGradient;
-    opacity: 0;
-    padding-top: 5px;
-    padding-bottom: 5px;
-    padding-left: 3%;
-    padding-right: 3%;
-    font-family: $navLinkFont;
-    font-size: 20px;
-    letter-spacing: 2px;
-    border: solid;
-    border-radius: 4px;
-    border-width: 1px;
-    transition: 600ms;
-    z-index: 2;
-    position: absolute;
-    cursor: pointer;
-  }
-
-  .loginBtnColor:hover {
-    color: white;
-    opacity: 1;
-    z-index: 10;
-  }
 }
 
 .dialogBtns {
@@ -132,58 +85,33 @@
   align-items: center;
   padding-top: 10px;
 
-  .dialogGoogle {
-    font-size: 16px !important;
-    border: solid;
-    display: flex;
-    justify-content: center;
+  
+  .loginImg {
+    float: right;
     align-items: center;
-    background: linear-gradient(
-      117deg,
-      rgba(37, 152, 68, 1) 51%,
-      rgba(72, 150, 237, 1) 93%
-    );
-    border-radius: 4px;
-    color: white;
-    border-width: 1px;
-    padding: 5px;
-    cursor: pointer;
-    transition: 600ms;
-  }
-  .dialogGoogle:hover {
-    border-color: grey;
-  }
-
-  .dialogGithub {
-    font-size: 16px !important;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: linear-gradient(
-      117deg,
-      rgba(33, 30, 30, 1) 19%,
-      rgba(86, 39, 130, 1) 53%,
-      rgba(188, 72, 237, 1) 81%
-    );
-    border: solid;
-    color: white;
-    border-radius: 4px;
-    border-width: 1px;
-    padding: 5px;
-    cursor: pointer;
-    transition: 600ms;
-  }
-  .dialogGithub:hover {
-    border-color: grey;
+    padding-left: 5px;
+    width: 13%;
+    filter: invert(100%);
   }
 }
 
-.loginImg {
-  float: right;
+.googleBtn {
+  font-size: 16px !important;
+  border: solid;
+  display: flex;
+  justify-content: center;
   align-items: center;
-  padding-left: 5px;
-  width: 13%;
-  filter: invert(100%);
+  background: $googleBlue;
+  border-radius: 4px;
+  color: white;
+  border-width: 1px;
+  border-color: grey;
+  padding: 5px;
+  cursor: pointer;
+  transition: 600ms;
+}
+.googleBtn:hover {
+  border-color: white;
 }
 
 .logoutBtn {

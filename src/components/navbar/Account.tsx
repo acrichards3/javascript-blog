@@ -39,7 +39,7 @@ export default function Account() {
   return (
     <div>
       <Dialog
-        title="ACCOUNT"
+        title={`ACCOUNT ${context.state.isAdmin ? 'ADMIN' : ''}`}
         style={{ letterSpacing: 2 }}
         className={`bp4-dark`}
         isOpen={context.state.isOpen}
