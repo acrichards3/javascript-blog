@@ -9,11 +9,13 @@ export default function Navbar() {
   const context = useContext(GlobalContext);
   console.log(context.state.isOpen, context.state.loggedIn);
 
-  
-
   const loginBtn = () => {
     if (context.state.loggedIn) {
-      return 'Account';
+      return (
+        <Link to="/" className={styles.accountBtn} style={{textDecoration: 'none'}}>
+          Account
+        </Link>
+      );
     }
     if (context.state.loggedIn === false) {
       return <Login />;
@@ -55,9 +57,7 @@ export default function Navbar() {
           </Link>
         </div>
       </div>
-      <div className={styles.navEnd}>
-        {loginBtn()}
-      </div>
+      <div className={styles.navEnd}>{loginBtn()}</div>
     </div>
   );
 }

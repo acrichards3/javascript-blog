@@ -29,7 +29,6 @@ export default function Account() {
   const signUserOut = () => {
     signOut(auth).then(() => {
       localStorage.clear();
-      context.dispatch({ type: ACTIONS.IS_OPEN_FALSE });
       context.dispatch({ type: ACTIONS.SET_AUTH_FALSE });
       context.dispatch({ type: ACTIONS.SET_LOGGED_IN_FALSE });
       context.dispatch({ type: ACTIONS.IS_ADMIN_FALSE });
@@ -43,7 +42,6 @@ export default function Account() {
         style={{ letterSpacing: 2 }}
         className={`bp4-dark`}
         isOpen={context.state.isOpen}
-        onClose={() => context.dispatch({ type: ACTIONS.IS_OPEN_FALSE })}
         usePortal={true}
       >
         <div className={styles.dialogBtns}>

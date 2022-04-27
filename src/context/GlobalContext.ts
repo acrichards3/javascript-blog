@@ -11,8 +11,6 @@ export const ADMINS = [
 ];
 
 export const ACTIONS = {
-  IS_OPEN_TRUE: 'IS_OPEN_TRUE',
-  IS_OPEN_FALSE: 'IS_OPEN_FALSE',
   SET_AUTH_TRUE: 'SET_AUTH_TRUE',
   SET_AUTH_FALSE: 'SET_AUTH_FALSE',
   SET_LOGGED_IN_TRUE: 'SET_LOGGED_IN_TRUE',
@@ -22,7 +20,6 @@ export const ACTIONS = {
 };
 
 export const initialState: any = {
-  isOpen: false,
   isAuth: false,
   loggedIn: false,
   isAdmin: false,
@@ -30,12 +27,6 @@ export const initialState: any = {
 
 export const reducer = (state: any, action: any) => {
   switch (action.type) {
-    // OPEN LOGIN DIALOG
-    case ACTIONS.IS_OPEN_TRUE:
-      return { ...state, isOpen: true };
-    case ACTIONS.IS_OPEN_FALSE:
-      return { ...state, isOpen: false };
-
     // AUTHENTICATION
     case ACTIONS.SET_AUTH_TRUE:
       return { ...state, isAuth: true };

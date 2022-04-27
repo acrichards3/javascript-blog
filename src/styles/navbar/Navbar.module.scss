@@ -79,21 +79,6 @@
   }
 }
 
-.dialogBtns {
-  display: flex;
-  justify-content: space-evenly;
-  align-items: center;
-  padding-top: 10px;
-
-  
-  .loginImg {
-    float: right;
-    align-items: center;
-    padding-left: 5px;
-    width: 13%;
-    filter: invert(100%);
-  }
-}
 
 .googleBtn {
   font-size: 16px !important;
@@ -109,8 +94,42 @@
   padding: 5px;
   cursor: pointer;
   transition: 600ms;
+
+  .loginImg {
+    float: right;
+    align-items: center;
+    padding-left: 5px;
+    width: 13%;
+    filter: invert(100%);
+  }
 }
 .googleBtn:hover {
+  border-color: white;
+}
+
+.routerLink {
+  text-decoration: none;
+}
+
+.accountBtn {
+  font-size: 20px !important;
+  text-decoration: none;
+  width: 35%;
+  border: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $googleBlue;
+  border-radius: 4px;
+  color: white !important;
+  border-width: 1px;
+  border-color: grey;
+  padding: 5px;
+  cursor: pointer;
+  transition: 600ms;
+  
+}
+.accountBtn:hover {
   border-color: white;
 }
 
