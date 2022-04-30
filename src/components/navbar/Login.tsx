@@ -9,11 +9,15 @@ export default function Login() {
   const context = useContext(GlobalContext);
 
   const signInWithGoogle = () => {
-    signInWithPopup(auth, googleProvider).then((result) => {
-      context.dispatch({ type: ACTIONS.SET_LOGGED_IN_TRUE });
-      localStorage.setItem("loggedIn", 'true');
-    });
+    signInWithPopup(auth, googleProvider)
+      .then((result) => {
+        context.dispatch({ type: ACTIONS.SET_LOGGED_IN_TRUE });
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
+
 
   return (
     <div>

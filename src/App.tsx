@@ -5,10 +5,11 @@ import Home from './pages/Home';
 import CreatePost from './pages/CreatePost';
 import Navbar from './components/navbar/Navbar';
 import Sidebar from './components/sidebar/Sidebar';
-import Account from './pages/Account';
 import Admin from './protectedRoutes/Admin';
-import LoggedIn from './protectedRoutes/LoggedIn';
+import ComingSoon from './pages/ComingSoon';
+import Page404 from './pages/Page404';
 import './styles/app/App.scss';
+//import LoggedIn from './protectedRoutes/LoggedIn';
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
@@ -20,9 +21,8 @@ function App() {
           <Sidebar />
           <Routes>
             <Route path="/" element={<Home />} />
-            <Route element={<LoggedIn />}>
-              <Route path="/account" element={<Account />} />
-            </Route>
+            <Route path="/courses" element={<ComingSoon />} />
+            <Route path="*" element={<Page404 />} />
             <Route element={<Admin />}>
               <Route path="/create-post" element={<CreatePost />} />
             </Route>

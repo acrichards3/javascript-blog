@@ -12,7 +12,7 @@ export default function About() {
         />
         <p className={styles.text}>
           Hi, I'm Alex! 3 years ago, I console logged my first "Hello World" and
-          shortly after, I was hooked on coding. Today I'm a full stack web
+          shortly after, I was hooked on coding. Today, I'm a full stack web
           developer whos passion is to teach others how to code through writing
           and videos.
         </p>

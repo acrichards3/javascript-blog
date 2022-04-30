@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { Icon } from '@blueprintjs/core';
 import { GlobalContext, ADMINS, ACTIONS } from '../../context/GlobalContext';
 import Login from './Login';
+import { signOut } from 'firebase/auth';
 import { auth } from '../../firebase-config';
 import styles from '../../styles/navbar/Navbar.module.scss';
 
@@ -11,16 +12,24 @@ export default function Navbar() {
   const user = auth.currentUser;
   const UID = user?.uid ?? '';
 
+  console.log(UID, 'user');
   console.log(context.state.loggedIn, 'loggedin');
   console.log(context.state.isAdmin, 'admin');
 
+  const signUserOut = () => {
+    signOut(auth).then(() => {
+      localStorage.clear();
+      context.dispatch({ type: ACTIONS.SET_LOGGED_IN_FALSE });
+      context.dispatch({ type: ACTIONS.IS_ADMIN_FALSE });
+    });
+  };
 
   const loginBtn = () => {
     if (context.state.loggedIn) {
       return (
-        <Link to="/account" className={styles.accountBtn}>
-          Account
-        </Link>
+        <button className={styles.logoutBtn} onClick={signUserOut}>
+          Sign Out
+        </button>
       );
     }
     if (context.state.loggedIn === false) {
@@ -36,11 +45,20 @@ export default function Navbar() {
     }
   };
 
+  const createPost = () => {
+    if (context.state.isAdmin) {
+      return (
+        <Link to="/courses" className={styles.coursesIcon}>
+          <Icon icon="edit" /> Create Post{' '}
+        </Link>
+      );
+    }
+  };
+
   useEffect(() => {
     checkAdmin();
     // eslint-disable-next-line
   }, [user]);
-
 
   return (
     <div className={styles.navbar}>
@@ -76,6 +94,7 @@ export default function Navbar() {
             <Icon icon="learning" /> Courses{' '}
           </Link>
         </div>
+        <div className={styles.coursesIcon}>{createPost()}</div>
       </div>
       <div className={styles.navEnd}>{loginBtn()}</div>
     </div>
