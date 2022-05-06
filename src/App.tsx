@@ -23,9 +23,8 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/courses" element={<ComingSoon />} />
             <Route path="*" element={<Page404 />} />
-            <Route element={<Admin />}>
-              <Route path="/create-post" element={<CreatePost />} />
-            </Route>
+            <Route path="/create-post" element={<CreatePost />} />
+            <Route element={<Admin />}></Route>
           </Routes>
         </Router>
       </GlobalContext.Provider>

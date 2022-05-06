@@ -1,2 +1,44 @@
 @import '../variables/Variables.scss';
 
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  
+
+  .header {
+    font-size: 40px !important;
+  }
+
+  .block {
+    display: flex;
+  }
+}
+
+.newBlock {
+  display: flex;
+  justify-content: flex-start;
+  padding: 2px;
+  padding-left: 6px;
+  font-size: 20px !important;
+}
+
+.newBlockBtn {
+  font-size: 16px !important;
+  border: solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: $googleBlue;
+  border-radius: 10px;
+  color: white;
+  border-width: 1px;
+  border-color: grey;
+  padding: 5px;
+  cursor: pointer;
+  transition: 600ms;
+}
+
+.newBlockBtn:hover {
+    border-color: white;
+}

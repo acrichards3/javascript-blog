@@ -1,0 +1,50 @@
+@import '../variables/Variables.scss';
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 50px;
+  margin-right: 2%;
+
+  .featuredCard {
+    display: flex;
+    justify-content: center;
+    border: solid;
+    border-color: $navLinkColor;
+    border-radius: 8px;
+    border-width: 2px;
+    width: 90%;
+    aspect-ratio: 3.5;
+    cursor: pointer;
+    transition: 600ms;
+  }
+
+  .featuredCard:hover {
+    border-color: white;
+  }
+
+  
+  .dummyText {
+      display: flex;
+      align-items: center;
+    }
+}
+
+.secondaryRow {
+    display: flex;
+    flex-direction: row;
+    padding: 2%;
+
+    .secondaryCard {
+      display: flex;
+      justify-content: center;
+      border: solid;
+      border-color: $navLinkColor;
+      border-radius: 8px;
+      border-width: 2px;
+      aspect-ratio: 3.5;
+      cursor: pointer;
+      transition: 600ms;
+    }
+}

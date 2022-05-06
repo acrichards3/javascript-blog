@@ -17,7 +17,7 @@ export default function About() {
           and videos.
         </p>
         <h1 className={styles.header}>LEGAL</h1>
-        <p className={styles.text}>
+        <p className={`${styles.text} ${styles.bottom}`}>
           This site is owned and operated by ACR Blogs LLC. javascript-blog is a
           participant in the Amazon Services LLC Associates Program, an
           affiliate advertising program designed to provide a means for sites to
@@ -25,6 +25,7 @@ export default function About() {
           site also participates in other affiliate programs and is compensated
           for referring traffic and business to these companies.
         </p>
+
     </div>
   );
 }
