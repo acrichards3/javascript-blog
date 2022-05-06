@@ -48,7 +48,7 @@ export default function Navbar() {
   const createPost = () => {
     if (context.state.isAdmin) {
       return (
-        <Link to="/courses" className={styles.coursesIcon}>
+        <Link to="/create-post" className={styles.coursesIcon}>
           <Icon icon="edit" /> Create Post{' '}
         </Link>
       );
