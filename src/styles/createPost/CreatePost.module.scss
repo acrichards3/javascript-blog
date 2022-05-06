@@ -1,6 +1,7 @@
 @import '../variables/Variables.scss';
 
 .container {
+<<<<<<< HEAD
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -41,4 +42,49 @@
 
 .newBlockBtn:hover {
     border-color: white;
+=======
+  margin-inline-start: 5%;
+  margin-top: 50px;
+
+  .title {
+    font-size: 50px !important;
+    display: flex;
+    justify-content: center;
+  }
+
+  .createPost {
+    padding-bottom: 3%;
+
+    .input {
+      display: flex;
+      justify-content: flex-start;
+      padding: 10px;
+    }
+
+    .postTitle {
+      display: flex;
+      width: 90%;
+    }
+
+    .textArea {
+        display: flex;
+        width: 90%;
+    }
+
+    .publishBtn {
+      font-size: 30px !important;
+      border: solid;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: $googleBlue;
+      border-radius: 4px;
+      color: white;
+      border-width: 1px;
+      border-color: grey;
+      padding: 5px;
+      cursor: pointer;
+    }
+  }
+>>>>>>> d0aafe36d6d5e8b72fdca60b5b8af0ab7a0c95d3
 }
